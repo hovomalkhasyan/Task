@@ -13,5 +13,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
     }
+    @IBAction func btn(_ sender: UIButton) {
+        let controller = AlbumsViewController.create(AlbumsViewModel())
+        navigationController?.pushViewController(controller, animated: true)
+    }
 }
 

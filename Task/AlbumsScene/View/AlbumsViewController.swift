@@ -21,6 +21,6 @@ class AlbumsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        viewModel.getAlbums()
     }
 }

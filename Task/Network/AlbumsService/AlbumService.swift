@@ -8,7 +8,7 @@
 import Foundation
 enum AlbumsService: NetworkService {
 
-    case getAlbums(_ model: AlbumsRequestModel)
+    case getAlbums
     case getPhotos(_ model: PhotosRequestModel)
     
     var method: HTTPMethod {
@@ -26,7 +26,7 @@ enum AlbumsService: NetworkService {
     
     var parameters: Encodable? {
         switch self {
-        case .getAlbums(let model): return model
+        case .getAlbums: return nil
         case .getPhotos(let model): return model
         }
     }
@@ -39,7 +39,9 @@ enum AlbumsService: NetworkService {
     
     var queryItems: [String : String]? {
         switch self {
-        case .getAlbums, .getPhotos: return nil
+        case .getAlbums:
+            return ["userId": "1"]
+        case .getPhotos: return nil
         }
     }
 }

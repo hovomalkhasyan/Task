@@ -11,11 +11,6 @@ import UIKit
 // MARK: - HTTP methods
 public enum HTTPMethod: String {
     case get = "GET"
-    case head = "HEAD"
-    case post = "POST"
-    case put = "PUT"
-    case patch = "PATCH"
-    case delete = "DELETE"
 }
 
 // MARK: - Request service
@@ -31,10 +26,6 @@ public protocol NetworkService {
 }
 
 public extension NetworkService {
-    
-    var formData: (String, [Data])? {
-        return nil
-    }
     
     // MARK: URLRequest
     var request: URLRequest {
@@ -90,15 +81,6 @@ public extension NetworkService {
                 }
             }
         }.resume()
-    }
-}
-
-
-extension NSMutableData {
-    func appendString(_ string: String) {
-        if let data = string.data(using: .utf8) {
-            append(data)
-        }
     }
 }
 

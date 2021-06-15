@@ -7,12 +7,12 @@
 
 import Foundation
 
-struct AlbumsResponseModel: Codable {
-    let albumsDetail: [AlbumDetail]
-}
+//struct AlbumsResponseModel: Codable {
+//    var albumsDetail: [AlbumDetail]?
+//}
 
 struct AlbumDetail: Codable {
-   let userId: Int
-   let id : Int
-   let title: String
+   var userId: Int?
+   var id : Int?
+   var title: String?
 }
