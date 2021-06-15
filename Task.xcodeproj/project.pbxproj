@@ -13,6 +13,20 @@
 		DD552A40267912DC00BA355E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD552A3E267912DC00BA355E /* Main.storyboard */; };
 		DD552A42267912E100BA355E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD552A41267912E100BA355E /* Assets.xcassets */; };
 		DD552A45267912E100BA355E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD552A43267912E100BA355E /* LaunchScreen.storyboard */; };
+		DD552A512679161E00BA355E /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD552A502679161E00BA355E /* Observable.swift */; };
+		DD552A54267916CD00BA355E /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD552A53267916CD00BA355E /* NetworkService.swift */; };
+		DD552A562679173200BA355E /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD552A552679173200BA355E /* NetworkError.swift */; };
+		DD552A58267917D000BA355E /* NetworkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD552A57267917D000BA355E /* NetworkConstants.swift */; };
+		DD552A5A2679182400BA355E /* NetworkResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD552A592679182400BA355E /* NetworkResponse.swift */; };
+		DD552A5D26791B9E00BA355E /* AlbumService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD552A5C26791B9E00BA355E /* AlbumService.swift */; };
+		DD552A652679248900BA355E /* AlbumsResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD552A642679248900BA355E /* AlbumsResponseModel.swift */; };
+		DD552A67267924E800BA355E /* PhotosResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD552A66267924E800BA355E /* PhotosResponseModel.swift */; };
+		DD552A6B2679255000BA355E /* PhotosRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD552A6A2679255000BA355E /* PhotosRequestModel.swift */; };
+		DD552A6D2679259300BA355E /* AlbumsRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD552A6C2679259300BA355E /* AlbumsRequestModel.swift */; };
+		DD552A732679275500BA355E /* AlbumsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD552A712679275500BA355E /* AlbumsViewController.swift */; };
+		DD552A742679275500BA355E /* AlbumsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD552A722679275500BA355E /* AlbumsViewController.xib */; };
+		DD552A762679277C00BA355E /* AlbumsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD552A752679277C00BA355E /* AlbumsViewModel.swift */; };
+		DD552A792679283E00BA355E /* Extension + UIResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD552A782679283E00BA355E /* Extension + UIResponder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +38,20 @@
 		DD552A41267912E100BA355E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DD552A44267912E100BA355E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DD552A46267912E100BA355E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DD552A502679161E00BA355E /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		DD552A53267916CD00BA355E /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		DD552A552679173200BA355E /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		DD552A57267917D000BA355E /* NetworkConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConstants.swift; sourceTree = "<group>"; };
+		DD552A592679182400BA355E /* NetworkResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResponse.swift; sourceTree = "<group>"; };
+		DD552A5C26791B9E00BA355E /* AlbumService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumService.swift; sourceTree = "<group>"; };
+		DD552A642679248900BA355E /* AlbumsResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsResponseModel.swift; sourceTree = "<group>"; };
+		DD552A66267924E800BA355E /* PhotosResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosResponseModel.swift; sourceTree = "<group>"; };
+		DD552A6A2679255000BA355E /* PhotosRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosRequestModel.swift; sourceTree = "<group>"; };
+		DD552A6C2679259300BA355E /* AlbumsRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsRequestModel.swift; sourceTree = "<group>"; };
+		DD552A712679275500BA355E /* AlbumsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsViewController.swift; sourceTree = "<group>"; };
+		DD552A722679275500BA355E /* AlbumsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlbumsViewController.xib; sourceTree = "<group>"; };
+		DD552A752679277C00BA355E /* AlbumsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsViewModel.swift; sourceTree = "<group>"; };
+		DD552A782679283E00BA355E /* Extension + UIResponder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UIResponder.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,10 +84,13 @@
 		DD552A37267912DC00BA355E /* Task */ = {
 			isa = PBXGroup;
 			children = (
-				DD552A4E267913E800BA355E /* Utils */,
+				DD552A6E267926F600BA355E /* AlbumsScene */,
+				DD552A46267912E100BA355E /* Info.plist */,
 				DD552A4C267912F200BA355E /* Application */,
 				DD552A3C267912DC00BA355E /* ViewController.swift */,
 				DD552A3E267912DC00BA355E /* Main.storyboard */,
+				DD552A522679165000BA355E /* Network */,
+				DD552A4E267913E800BA355E /* Utils */,
 				DD552A4D2679135A00BA355E /* Resources */,
 			);
 			path = Task;
@@ -79,7 +110,6 @@
 			children = (
 				DD552A41267912E100BA355E /* Assets.xcassets */,
 				DD552A43267912E100BA355E /* LaunchScreen.storyboard */,
-				DD552A46267912E100BA355E /* Info.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -87,8 +117,92 @@
 		DD552A4E267913E800BA355E /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				DD552A772679281F00BA355E /* Extensions */,
+				DD552A4F2679160300BA355E /* Observable */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		DD552A4F2679160300BA355E /* Observable */ = {
+			isa = PBXGroup;
+			children = (
+				DD552A502679161E00BA355E /* Observable.swift */,
+			);
+			path = Observable;
+			sourceTree = "<group>";
+		};
+		DD552A522679165000BA355E /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				DD552A53267916CD00BA355E /* NetworkService.swift */,
+				DD552A552679173200BA355E /* NetworkError.swift */,
+				DD552A57267917D000BA355E /* NetworkConstants.swift */,
+				DD552A592679182400BA355E /* NetworkResponse.swift */,
+				DD552A5B26791B4F00BA355E /* AlbumsService */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		DD552A5B26791B4F00BA355E /* AlbumsService */ = {
+			isa = PBXGroup;
+			children = (
+				DD552A5F26791D1400BA355E /* RequestModel */,
+				DD552A5E26791D0B00BA355E /* ResponseModel */,
+				DD552A5C26791B9E00BA355E /* AlbumService.swift */,
+			);
+			path = AlbumsService;
+			sourceTree = "<group>";
+		};
+		DD552A5E26791D0B00BA355E /* ResponseModel */ = {
+			isa = PBXGroup;
+			children = (
+				DD552A642679248900BA355E /* AlbumsResponseModel.swift */,
+				DD552A66267924E800BA355E /* PhotosResponseModel.swift */,
+			);
+			path = ResponseModel;
+			sourceTree = "<group>";
+		};
+		DD552A5F26791D1400BA355E /* RequestModel */ = {
+			isa = PBXGroup;
+			children = (
+				DD552A6A2679255000BA355E /* PhotosRequestModel.swift */,
+				DD552A6C2679259300BA355E /* AlbumsRequestModel.swift */,
+			);
+			path = RequestModel;
+			sourceTree = "<group>";
+		};
+		DD552A6E267926F600BA355E /* AlbumsScene */ = {
+			isa = PBXGroup;
+			children = (
+				DD552A702679272300BA355E /* ViewModel */,
+				DD552A6F2679271D00BA355E /* View */,
+			);
+			path = AlbumsScene;
+			sourceTree = "<group>";
+		};
+		DD552A6F2679271D00BA355E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DD552A712679275500BA355E /* AlbumsViewController.swift */,
+				DD552A722679275500BA355E /* AlbumsViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DD552A702679272300BA355E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				DD552A752679277C00BA355E /* AlbumsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		DD552A772679281F00BA355E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				DD552A782679283E00BA355E /* Extension + UIResponder.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,6 +262,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD552A742679275500BA355E /* AlbumsViewController.xib in Resources */,
 				DD552A45267912E100BA355E /* LaunchScreen.storyboard in Resources */,
 				DD552A42267912E100BA355E /* Assets.xcassets in Resources */,
 				DD552A40267912DC00BA355E /* Main.storyboard in Resources */,
@@ -161,9 +276,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD552A792679283E00BA355E /* Extension + UIResponder.swift in Sources */,
+				DD552A732679275500BA355E /* AlbumsViewController.swift in Sources */,
+				DD552A58267917D000BA355E /* NetworkConstants.swift in Sources */,
+				DD552A5A2679182400BA355E /* NetworkResponse.swift in Sources */,
+				DD552A54267916CD00BA355E /* NetworkService.swift in Sources */,
+				DD552A512679161E00BA355E /* Observable.swift in Sources */,
+				DD552A652679248900BA355E /* AlbumsResponseModel.swift in Sources */,
 				DD552A3D267912DC00BA355E /* ViewController.swift in Sources */,
+				DD552A5D26791B9E00BA355E /* AlbumService.swift in Sources */,
+				DD552A562679173200BA355E /* NetworkError.swift in Sources */,
 				DD552A39267912DC00BA355E /* AppDelegate.swift in Sources */,
 				DD552A3B267912DC00BA355E /* SceneDelegate.swift in Sources */,
+				DD552A67267924E800BA355E /* PhotosResponseModel.swift in Sources */,
+				DD552A6D2679259300BA355E /* AlbumsRequestModel.swift in Sources */,
+				DD552A6B2679255000BA355E /* PhotosRequestModel.swift in Sources */,
+				DD552A762679277C00BA355E /* AlbumsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
