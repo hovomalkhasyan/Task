@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -15,10 +16,25 @@
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                 <rect key="frame" x="0.0" y="0.0" width="308" height="195"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BhA-d0-kRl">
+                        <rect key="frame" x="133.5" y="87.5" width="41.5" height="20.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <color key="backgroundColor" red="0.90588235289999997" green="0.20784313730000001" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="BhA-d0-kRl" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="DC2-Cc-bDm"/>
+                <constraint firstItem="BhA-d0-kRl" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="qaK-Ax-dGv"/>
+            </constraints>
             <size key="customSize" width="308" height="195"/>
+            <connections>
+                <outlet property="labelText" destination="BhA-d0-kRl" id="24R-W0-xlL"/>
+            </connections>
             <point key="canvasLocation" x="128.98550724637681" y="143.63839285714286"/>
         </collectionViewCell>
     </objects>

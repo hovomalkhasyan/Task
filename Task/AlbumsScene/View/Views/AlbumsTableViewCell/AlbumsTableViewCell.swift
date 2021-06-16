@@ -21,7 +21,6 @@ class AlbumsTableViewCell: UITableViewCell {
     
     override func layoutIfNeeded() {
         super.layoutIfNeeded()
-        self.collectionView.scrollToItem(at: IndexPath(item: 1, section: 0), at: .left, animated: false)
     }
 }
 
@@ -54,18 +53,10 @@ extension AlbumsTableViewCell: UICollectionViewDelegate, UICollectionViewDataSou
         let width = collectionView.frame.width
         return CGSize(width: width, height: height)
     }
-    
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        let pageFloat = (scrollView.contentOffset.x / scrollView.frame.size.width)
-        let pageInt = Int(round(pageFloat))
+}
+
+extension AlbumsTableViewCell {
+    public func setData(model: [PhotosDetailsResponseModel]) {
         
-        switch pageInt {
-        case 0:
-            collectionView.scrollToItem(at: [0, 3], at: .left, animated: false)
-        case array.count - 1:
-            collectionView.scrollToItem(at: [0, 1], at: .left, animated: false)
-        default:
-            break
-        }
     }
 }

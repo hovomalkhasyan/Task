@@ -10,7 +10,7 @@ import Foundation
 class AlbumsViewModel {
     
     public var albumDetails = Observable<[AlbumDetailResponseModel]>([])
-    public var photosDetail = Observable<[[PhotosDetailsResponseModel]]>([])
+    public var photosDetail = [PhotosDetailsResponseModel]()
     private var photosRequestModel = PhotosRequestModel()
     
     public func getAlbums() {
@@ -36,7 +36,7 @@ class AlbumsViewModel {
             }
             DispatchQueue.main.async {
                 if let data = data {
-                    self?.photosDetail.value.append(data)
+                    self?.photosDetail = data
                 }
             }
         }

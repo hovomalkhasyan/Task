@@ -44,10 +44,6 @@ extension AlbumsViewController {
                 }
             }
         }
-        
-        viewModel.photosDetail.observe(on: self) { [] _ in
-            
-        }
     }
 }
 
@@ -81,6 +77,8 @@ extension AlbumsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: AlbumsTableViewCell.name, for: indexPath) as! AlbumsTableViewCell
+        cell.setData(model: viewModel.photosDetail)
+        cell.collectionView.reloadData()
         return cell
     }
     
