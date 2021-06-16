@@ -12,10 +12,9 @@ enum NetworkConstants: String {
 
     enum Keys: String {
         case content = "Content-Type"
-        case auth = "Authorization"
     }
     
     enum Parametres: String {
-        case json = "application/json"
+        case json = "application/json; charset=utf-8"
     }
 }

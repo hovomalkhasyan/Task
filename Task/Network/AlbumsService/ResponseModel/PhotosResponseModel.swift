@@ -7,11 +7,7 @@
 
 import Foundation
 
-struct PhotosResponseModel: Codable {
-    let photosDetail: [PhotosDetails]
-}
-
-struct PhotosDetails: Codable {
+struct PhotosDetailsResponseModel: Codable {
     let albumId: Int
     let id: Int
     let title: String

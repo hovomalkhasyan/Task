@@ -8,5 +8,5 @@
 import Foundation
 
 struct PhotosRequestModel: Codable {
-    let albumId: Int
+    var albumId: Int?
 }

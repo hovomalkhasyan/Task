@@ -53,22 +53,11 @@ public extension NetworkService {
                     networkError = NetworkError(res.statusCode)
                     completion(nil, networkError)
                 }
+                
                 if let data = data {
                     do {
-                        let response = try decoder.decode(NetworkResponse<Value>.self, from: data)
-                        if response.success ?? false {
-                            completion(response.data, nil)
-                        } else {
-                            if let error_ = response.error {
-                                networkError = NetworkError.custom(error_)
-                                completion(nil, networkError)
-                            } else {
-                                if let message = response.message {
-                                    networkError = NetworkError.custom(message.isEmpty ? "Something went wrong, please try again" : message)
-                                    completion(nil, networkError)
-                                }
-                            }
-                        }
+                        let response = try decoder.decode(Value.self, from: data)
+                        completion(response, nil)
                     } catch let error_ {
                         debugPrint(error_.localizedDescription)
                         completion(nil, nil)
