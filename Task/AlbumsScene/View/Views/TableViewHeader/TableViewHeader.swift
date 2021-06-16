@@ -10,6 +10,7 @@ import UIKit
 class TableViewHeader: UITableViewCell {
     // MARK: - Views
     @IBOutlet weak private var headerText: UILabel!
+    
     // MARK: - lifeCycle
     override func awakeFromNib() {
         super.awakeFromNib()
