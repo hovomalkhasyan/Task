@@ -10,7 +10,7 @@ import Foundation
 class AlbumsViewModel {
     
     public var albumDetails = Observable<[AlbumDetailResponseModel]>([])
-    public var photosDetail = [PhotosDetailsResponseModel]()
+    public var photosDetail = [[PhotosDetailsResponseModel]]()
     private var photosRequestModel = PhotosRequestModel()
     
     public func getAlbums() {
@@ -22,13 +22,12 @@ class AlbumsViewModel {
             DispatchQueue.main.async {
                 if let data = data {
                     self?.albumDetails.value = data
-                    print(data)
                 }
             }
         }
     }
     
-    public func getPhotos(_ id: Int) {
+    public func getPhotos(_ id: Int, complition: @escaping ()->Void) {
         AlbumsService.getPhotos(id: id).perform { [weak self] (data: [PhotosDetailsResponseModel]?, error) in
             if let error = error {
                 print(error.localizedDescription)
@@ -36,7 +35,8 @@ class AlbumsViewModel {
             }
             DispatchQueue.main.async {
                 if let data = data {
-                    self?.photosDetail = data
+                    self?.photosDetail.append(data)
+                    complition()
                 }
             }
         }

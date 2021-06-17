@@ -13,7 +13,7 @@ class AlbumsViewController: UIViewController {
    
     // MARK: - ViewModel
     private var viewModel: AlbumsViewModel!
-    
+    private var dispatchGroup = DispatchGroup()
     // MARK: - Lifecycle
     static func create(_ viewModel: AlbumsViewModel) -> AlbumsViewController {
         let vc = AlbumsViewController(nibName: AlbumsViewController.name, bundle: nil)
@@ -40,7 +40,14 @@ extension AlbumsViewController {
             self?.tableView.reloadData()
             value.forEach {
                 if let id = $0.id {
-                    self?.viewModel.getPhotos(id)
+                    self?.dispatchGroup.enter()
+                    self?.viewModel.getPhotos(id) {
+                        self?.dispatchGroup.leave()
+                    }
+                    
+                    self?.dispatchGroup.notify(queue: .main) { [weak self] in
+                        self?.tableView.reloadData()
+                    }
                 }
             }
         }
@@ -68,7 +75,7 @@ extension AlbumsViewController {
     // MARK: - TableView delegate & data source
 extension AlbumsViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return viewModel.albumDetails.value.count
+        return viewModel.photosDetail.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -77,8 +84,7 @@ extension AlbumsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: AlbumsTableViewCell.name, for: indexPath) as! AlbumsTableViewCell
-        cell.setData(model: viewModel.photosDetail)
-        cell.collectionView.reloadData()
+        cell.setData(model: viewModel.photosDetail[indexPath.section])
         return cell
     }
     
@@ -86,10 +92,6 @@ extension AlbumsViewController: UITableViewDelegate, UITableViewDataSource {
         let headerView = tableView.dequeueReusableCell(withIdentifier: TableViewHeader.name) as! TableViewHeader
         headerView.setData(viewModel.albumDetails.value[section])
         return headerView
-    }
-
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return viewModel.albumDetails.value[section].title
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {

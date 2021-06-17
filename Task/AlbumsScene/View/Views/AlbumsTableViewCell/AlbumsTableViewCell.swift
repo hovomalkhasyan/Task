@@ -11,17 +11,20 @@ class AlbumsTableViewCell: UITableViewCell {
     // MARK: - Views
     @IBOutlet weak var collectionView: UICollectionView!
     
-    let array = [#colorLiteral(red: 0.1921568662, green: 0.007843137719, blue: 0.09019608051, alpha: 1) , #colorLiteral(red: 0.09019608051, green: 0, blue: 0.3019607961, alpha: 1), #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), #colorLiteral(red: 0.1921568662, green: 0.007843137719, blue: 0.09019608051, alpha: 1) ,#colorLiteral(red: 0.09019608051, green: 0, blue: 0.3019607961, alpha: 1)]
-    
+    //MARK: - Propertyes
+    private var photosArray = [PhotosDetailsResponseModel]()
+  
     // MARK: - lifeCycle
     override func awakeFromNib() {
         super.awakeFromNib()
         setup()
     }
     
-    override func layoutIfNeeded() {
-        super.layoutIfNeeded()
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        collectionView.scrollToItem(at:IndexPath(item: 0, section: 0), at: .left, animated: false)
     }
+    
 }
 
 // MARK: - setup
@@ -39,12 +42,12 @@ extension AlbumsTableViewCell {
 // MARK: - Collection view delegate & data source
 extension AlbumsTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return array.count
+        return photosArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotosCollectionViewCell.name, for: indexPath) as! PhotosCollectionViewCell
-        cell.contentView.backgroundColor = array[indexPath.row]
+        cell.setData(photosArray[indexPath.row])
         return cell
     }
     
@@ -55,8 +58,10 @@ extension AlbumsTableViewCell: UICollectionViewDelegate, UICollectionViewDataSou
     }
 }
 
+    // MARK: - Set data
 extension AlbumsTableViewCell {
     public func setData(model: [PhotosDetailsResponseModel]) {
-        
+        self.photosArray = model
+        collectionView.reloadData()
     }
 }
