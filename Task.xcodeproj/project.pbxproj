@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		5C243DAB83C94A366E7629E3 /* Pods_Task.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81C3018E84DB3E1C76EC856F /* Pods_Task.framework */; };
 		889AB0D9267B4CB000C81FCD /* Extension + UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889AB0D8267B4CB000C81FCD /* Extension + UIImageView.swift */; };
-		889AB0DC267B60B800C81FCD /* CollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889AB0DB267B60B800C81FCD /* CollectionViewLayout.swift */; };
 		88B0F2962679E01E00CB015A /* AlbumsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B0F2942679E01E00CB015A /* AlbumsTableViewCell.swift */; };
 		88B0F2972679E01E00CB015A /* AlbumsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88B0F2952679E01E00CB015A /* AlbumsTableViewCell.xib */; };
 		88B0F2992679E08E00CB015A /* Extension + UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B0F2982679E08E00CB015A /* Extension + UITableView.swift */; };
@@ -39,7 +38,6 @@
 /* Begin PBXFileReference section */
 		81C3018E84DB3E1C76EC856F /* Pods_Task.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Task.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		889AB0D8267B4CB000C81FCD /* Extension + UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UIImageView.swift"; sourceTree = "<group>"; };
-		889AB0DB267B60B800C81FCD /* CollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewLayout.swift; sourceTree = "<group>"; };
 		88B0F2942679E01E00CB015A /* AlbumsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsTableViewCell.swift; sourceTree = "<group>"; };
 		88B0F2952679E01E00CB015A /* AlbumsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlbumsTableViewCell.xib; sourceTree = "<group>"; };
 		88B0F2982679E08E00CB015A /* Extension + UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UITableView.swift"; sourceTree = "<group>"; };
@@ -89,14 +87,6 @@
 				D302885515A588F94512599B /* Pods-Task.release.xcconfig */,
 			);
 			path = Pods;
-			sourceTree = "<group>";
-		};
-		889AB0DA267B60A500C81FCD /* CollectionViewLayout */ = {
-			isa = PBXGroup;
-			children = (
-				889AB0DB267B60B800C81FCD /* CollectionViewLayout.swift */,
-			);
-			path = CollectionViewLayout;
 			sourceTree = "<group>";
 		};
 		88B0F2922679DFFB00CB015A /* Views */ = {
@@ -195,7 +185,6 @@
 		DD552A4E267913E800BA355E /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				889AB0DA267B60A500C81FCD /* CollectionViewLayout */,
 				DD552A772679281F00BA355E /* Extensions */,
 				DD552A4F2679160300BA355E /* Observable */,
 			);
@@ -410,7 +399,6 @@
 				DD552A58267917D000BA355E /* NetworkConstants.swift in Sources */,
 				DD552A5A2679182400BA355E /* NetworkResponse.swift in Sources */,
 				889AB0D9267B4CB000C81FCD /* Extension + UIImageView.swift in Sources */,
-				889AB0DC267B60B800C81FCD /* CollectionViewLayout.swift in Sources */,
 				DD552A54267916CD00BA355E /* NetworkService.swift in Sources */,
 				DD552A512679161E00BA355E /* Observable.swift in Sources */,
 				DD552A652679248900BA355E /* AlbumsResponseModel.swift in Sources */,

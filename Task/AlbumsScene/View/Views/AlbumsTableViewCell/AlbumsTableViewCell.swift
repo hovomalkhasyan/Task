@@ -25,7 +25,6 @@ class AlbumsTableViewCell: UITableViewCell {
         super.prepareForReuse()
         collectionView.scrollToItem(at: currentIndex, at: .left, animated: false)
     }
-    
 }
 
 // MARK: - setup

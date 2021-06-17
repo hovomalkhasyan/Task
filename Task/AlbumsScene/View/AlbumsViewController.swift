@@ -14,6 +14,7 @@ class AlbumsViewController: UIViewController {
     // MARK: - ViewModel
     private var viewModel: AlbumsViewModel!
     private var dispatchGroup = DispatchGroup()
+ 
     // MARK: - Lifecycle
     static func create(_ viewModel: AlbumsViewModel) -> AlbumsViewController {
         let vc = AlbumsViewController(nibName: AlbumsViewController.name, bundle: nil)
@@ -92,6 +93,17 @@ extension AlbumsViewController: UITableViewDelegate, UITableViewDataSource {
         let headerView = tableView.dequeueReusableCell(withIdentifier: TableViewHeader.name) as! TableViewHeader
         headerView.setData(viewModel.albumDetails.value[section])
         return headerView
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if tableView.contentOffset.y < 0 && indexPath.section != viewModel.photosDetail.count - 1 {
+            tableView.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi))
+            cell.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi))
+        }
+        if tableView.contentOffset.y > 0 && indexPath.section == viewModel.photosDetail.count - 1  {
+            tableView.transform = .identity
+            cell.transform = .identity
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
