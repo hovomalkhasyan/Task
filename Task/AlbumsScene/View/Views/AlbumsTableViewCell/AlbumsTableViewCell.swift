@@ -13,7 +13,8 @@ class AlbumsTableViewCell: UITableViewCell {
     
     //MARK: - Propertyes
     private var photosArray = [PhotosDetailsResponseModel]()
-  
+    private var currentIndex = IndexPath(row: 0, section: 0)
+ 
     // MARK: - lifeCycle
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -22,7 +23,7 @@ class AlbumsTableViewCell: UITableViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        collectionView.scrollToItem(at:IndexPath(item: 0, section: 0), at: .left, animated: false)
+        collectionView.scrollToItem(at: currentIndex, at: .left, animated: false)
     }
     
 }
@@ -47,6 +48,7 @@ extension AlbumsTableViewCell: UICollectionViewDelegate, UICollectionViewDataSou
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotosCollectionViewCell.name, for: indexPath) as! PhotosCollectionViewCell
+        currentIndex = indexPath
         cell.setData(photosArray[indexPath.row])
         return cell
     }
