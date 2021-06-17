@@ -18,9 +18,6 @@
 		88B0F2A7267A001A00CB015A /* TableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B0F2A5267A001A00CB015A /* TableViewHeader.swift */; };
 		88B0F2A8267A001A00CB015A /* TableViewHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88B0F2A6267A001A00CB015A /* TableViewHeader.xib */; };
 		DD552A39267912DC00BA355E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD552A38267912DC00BA355E /* AppDelegate.swift */; };
-		DD552A3B267912DC00BA355E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD552A3A267912DC00BA355E /* SceneDelegate.swift */; };
-		DD552A3D267912DC00BA355E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD552A3C267912DC00BA355E /* ViewController.swift */; };
-		DD552A40267912DC00BA355E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD552A3E267912DC00BA355E /* Main.storyboard */; };
 		DD552A42267912E100BA355E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD552A41267912E100BA355E /* Assets.xcassets */; };
 		DD552A45267912E100BA355E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD552A43267912E100BA355E /* LaunchScreen.storyboard */; };
 		DD552A512679161E00BA355E /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD552A502679161E00BA355E /* Observable.swift */; };
@@ -54,9 +51,6 @@
 		D302885515A588F94512599B /* Pods-Task.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Task.release.xcconfig"; path = "Target Support Files/Pods-Task/Pods-Task.release.xcconfig"; sourceTree = "<group>"; };
 		DD552A35267912DC00BA355E /* Task.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Task.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD552A38267912DC00BA355E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DD552A3A267912DC00BA355E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		DD552A3C267912DC00BA355E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		DD552A3F267912DC00BA355E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DD552A41267912E100BA355E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DD552A44267912E100BA355E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DD552A46267912E100BA355E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -173,8 +167,6 @@
 			children = (
 				DD552A6E267926F600BA355E /* AlbumsScene */,
 				DD552A4C267912F200BA355E /* Application */,
-				DD552A3C267912DC00BA355E /* ViewController.swift */,
-				DD552A3E267912DC00BA355E /* Main.storyboard */,
 				DD552A522679165000BA355E /* Network */,
 				DD552A4E267913E800BA355E /* Utils */,
 				DD552A4D2679135A00BA355E /* Resources */,
@@ -186,7 +178,6 @@
 			isa = PBXGroup;
 			children = (
 				DD552A38267912DC00BA355E /* AppDelegate.swift */,
-				DD552A3A267912DC00BA355E /* SceneDelegate.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -361,7 +352,6 @@
 				88B0F2972679E01E00CB015A /* AlbumsTableViewCell.xib in Resources */,
 				88B0F29E2679E49B00CB015A /* PhotosCollectionViewCell.xib in Resources */,
 				DD552A42267912E100BA355E /* Assets.xcassets in Resources */,
-				DD552A40267912DC00BA355E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,13 +414,11 @@
 				DD552A54267916CD00BA355E /* NetworkService.swift in Sources */,
 				DD552A512679161E00BA355E /* Observable.swift in Sources */,
 				DD552A652679248900BA355E /* AlbumsResponseModel.swift in Sources */,
-				DD552A3D267912DC00BA355E /* ViewController.swift in Sources */,
 				DD552A5D26791B9E00BA355E /* AlbumService.swift in Sources */,
 				DD552A562679173200BA355E /* NetworkError.swift in Sources */,
 				88B0F2992679E08E00CB015A /* Extension + UITableView.swift in Sources */,
 				88B0F2A7267A001A00CB015A /* TableViewHeader.swift in Sources */,
 				DD552A39267912DC00BA355E /* AppDelegate.swift in Sources */,
-				DD552A3B267912DC00BA355E /* SceneDelegate.swift in Sources */,
 				DD552A67267924E800BA355E /* PhotosResponseModel.swift in Sources */,
 				DD552A6D2679259300BA355E /* AlbumsRequestModel.swift in Sources */,
 				DD552A6B2679255000BA355E /* PhotosRequestModel.swift in Sources */,
@@ -442,14 +430,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		DD552A3E267912DC00BA355E /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DD552A3F267912DC00BA355E /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		DD552A43267912E100BA355E /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -586,7 +566,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4PS5F8YW72;
 				INFOPLIST_FILE = Task/Resources/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -607,7 +587,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4PS5F8YW72;
 				INFOPLIST_FILE = Task/Resources/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
