@@ -12,7 +12,7 @@ class AlbumsViewModel {
     public var albumDetails = Observable<[AlbumDetailResponseModel]>([])
     public var photosDetail = [[PhotosDetailsResponseModel]]()
     private var photosRequestModel = PhotosRequestModel()
-    
+
     public func getAlbums() {
         AlbumsService.getAlbums.perform { [weak self] (data: [AlbumDetailResponseModel]?, error) in
             if let error = error {
@@ -26,7 +26,7 @@ class AlbumsViewModel {
             }
         }
     }
-    
+
     public func getPhotos(_ id: Int, complition: @escaping ()->Void) {
         AlbumsService.getPhotos(id: id).perform { [weak self] (data: [PhotosDetailsResponseModel]?, error) in
             if let error = error {
@@ -42,3 +42,6 @@ class AlbumsViewModel {
         }
     }
 }
+
+
+

@@ -13,7 +13,6 @@ class AlbumsTableViewCell: UITableViewCell {
     
     //MARK: - Propertyes
     private var photosArray = [PhotosDetailsResponseModel]()
-    private var currentIndex = IndexPath(row: 0, section: 0)
  
     // MARK: - lifeCycle
     override func awakeFromNib() {
@@ -21,9 +20,9 @@ class AlbumsTableViewCell: UITableViewCell {
         setup()
     }
     
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        collectionView.scrollToItem(at: currentIndex, at: .left, animated: false)
+    override func draw(_ rect: CGRect) {
+        super.draw(rect)
+        collectionView.contentOffset.x = (collectionView.contentSize.width + 10) / 2
     }
 }
 
@@ -47,7 +46,6 @@ extension AlbumsTableViewCell: UICollectionViewDelegate, UICollectionViewDataSou
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotosCollectionViewCell.name, for: indexPath) as! PhotosCollectionViewCell
-        currentIndex = indexPath
         cell.setData(photosArray[indexPath.row])
         return cell
     }
@@ -57,12 +55,22 @@ extension AlbumsTableViewCell: UICollectionViewDelegate, UICollectionViewDataSou
         let width = collectionView.frame.width
         return CGSize(width: width, height: height)
     }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if collectionView.contentOffset.x <= 0 {
+            collectionView.contentOffset.x = (collectionView.contentSize.width + 10) / 2
+        } else if collectionView.contentOffset.x >= collectionView.contentSize.width - frame.width {
+            collectionView.contentOffset.x = (collectionView.contentSize.width + 10) / 2 - collectionView.frame.width - 10
+        }
+    }
 }
 
     // MARK: - Set data
 extension AlbumsTableViewCell {
+    
     public func setData(model: [PhotosDetailsResponseModel]) {
         self.photosArray = model
+        self.photosArray.append(contentsOf: model)
         collectionView.reloadData()
     }
 }

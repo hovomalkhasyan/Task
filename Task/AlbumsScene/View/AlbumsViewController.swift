@@ -10,7 +10,6 @@ import UIKit
 class AlbumsViewController: UIViewController {
     // MARK: - Views
     @IBOutlet weak var tableView: UITableView!
-   
     // MARK: - ViewModel
     private var viewModel: AlbumsViewModel!
     private var dispatchGroup = DispatchGroup()
@@ -26,6 +25,13 @@ class AlbumsViewController: UIViewController {
         super.viewDidLoad()
         setup()
         start()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        if viewModel.photosDetail.count > 0 {
+            tableView.scrollToRow(at: [viewModel.photosDetail.count / 2, 0], at: .top, animated: false)
+        }
     }
 }
 
@@ -45,10 +51,12 @@ extension AlbumsViewController {
                     self?.viewModel.getPhotos(id) {
                         self?.dispatchGroup.leave()
                     }
-                    
-                    self?.dispatchGroup.notify(queue: .main) { [weak self] in
-                        self?.tableView.reloadData()
-                    }
+                }
+            }
+            self?.dispatchGroup.notify(queue: .main) { [weak self] in
+                if let photos = self?.viewModel.photosDetail {
+                    self?.viewModel.photosDetail.append(contentsOf: photos)
+                    self?.tableView.reloadData()
                 }
             }
         }
@@ -91,18 +99,27 @@ extension AlbumsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = tableView.dequeueReusableCell(withIdentifier: TableViewHeader.name) as! TableViewHeader
-        headerView.setData(viewModel.albumDetails.value[section])
+        
+        if section >= viewModel.albumDetails.value.count {
+            headerView.setData(viewModel.albumDetails.value[section - viewModel.albumDetails.value.count])
+        } else {
+            headerView.setData(viewModel.albumDetails.value[section])
+        }
+        
         return headerView
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if tableView.contentOffset.y < 0 && indexPath.section != viewModel.photosDetail.count - 1 {
-            tableView.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi))
-            cell.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi))
-        }
-        if tableView.contentOffset.y > 0 && indexPath.section == viewModel.photosDetail.count - 1  {
-            tableView.transform = .identity
-            cell.transform = .identity
+        print(indexPath.section)
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if viewModel.photosDetail.count > 0 {
+            if tableView.contentOffset.y <= 0 {
+                tableView.contentOffset.y = tableView.contentSize.height / 2
+            } else if tableView.contentOffset.y >= tableView.contentSize.height - tableView.frame.height {
+                tableView.contentOffset.y = tableView.contentSize.height / 2 - tableView.frame.height
+            }
         }
     }
     
